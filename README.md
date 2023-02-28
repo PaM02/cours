@@ -9,4 +9,5 @@
 # pour passer une variable du controle au vue on ajoute un params modelMap
 # ajouter ça dans le template <html lang="en" xmlns:th="http://www.thymeleaf.org">
 # en ajouter ça pour recuperer la valeur <h1 th:text="${name}"></h1>
+#  <h1 th:text="'hello ' +${#strings.capitalize(name)}+ ' !'"></h1> mettre la premiere caractere en majuscule
  

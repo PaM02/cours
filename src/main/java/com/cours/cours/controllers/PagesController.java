@@ -5,6 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.jsf.FacesContextUtils;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -33,12 +34,15 @@ public class PagesController {
      */
 
     /*
-     * on peut aussi mettre ça sur le premier parametre HttpServletRequest
+     * on peut aussi mettre ça sur le premier parametre HttpServletRequest request
      * httpServletRequest
      */
 
+    /*
+     * required false param non requi
+     */
     @GetMapping("/")
-    public String home(@RequestParam String name, ModelMap map) {
+    public String home(@RequestParam(required = false, defaultValue = "World") String name, ModelMap map) {
         /*
          * http://localhost:8080/?name=matar
          * si on entre cette url
@@ -54,9 +58,13 @@ public class PagesController {
          * la variable name sera null
          */
 
-        String name = httpServletRequest.getParameter("name") != null
-                && !httpServletRequest.getParameter("name").isEmpty() ? httpServletRequest.getParameter("name")
-                        : "world";
+        /*
+         * lorsque le premier param est HttpServletRequest request
+         */
+        // String name = httpServletRequest.getParameter("name") != null
+        // && !httpServletRequest.getParameter("name").isEmpty() ?
+        // httpServletRequest.getParameter("name")
+        // : "world";
 
         map.put("name", name);
 

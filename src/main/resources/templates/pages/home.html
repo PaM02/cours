@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <h1 th:text="'hello ' +${name}+ ' wolrd'"></h1>
+        <h1 th:text="'hello ' +${#strings.capitalize(name)}+ ' !'"></h1>
     </body>
 
 </html>
