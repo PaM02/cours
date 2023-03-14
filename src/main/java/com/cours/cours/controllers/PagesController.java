@@ -4,10 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.jsf.FacesContextUtils;
-
-import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class PagesController {
@@ -29,7 +25,7 @@ public class PagesController {
 
     /*
      * lorsqu'on entre url / on sera
-     * rediriger vers lage home.html
+     * rediriger vers la page home.html
      * qui se trouve dans le repertoire pages
      */
 
